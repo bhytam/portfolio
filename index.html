@@ -77,6 +77,35 @@
       .proj{grid-template-columns:1fr}
       .col-4{grid-column:span 12}
     }
+    /* ==== Mobile tweaks ==== */
+    @media (max-width: 480px){
+      .container{padding:16px}
+      .nav{gap:8px}
+      header .container{padding:12px 16px}
+      header .brand{font-size:16px}
+      header nav{display:flex;gap:8px;overflow:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:6px}
+      header nav a.btn{padding:8px 10px;border-radius:10px;font-size:14px;white-space:nowrap;scroll-snap-align:start}
+
+      .hero{padding:28px 0 8px;gap:16px}
+      .hero h1{font-size:clamp(22px,8vw,30px)}
+      .kicker{font-size:12px}
+      .hero p{font-size:15px}
+      .cta{flex-direction:column}
+      .btn-primary,.btn-ghost{width:100%;text-align:center;padding:12px;border-radius:12px}
+
+      .hero-grid{grid-template-columns:1fr;gap:10px}
+      .stat b{font-size:18px}
+
+      section{padding:28px 0}
+      .grid{grid-template-columns:1fr}
+      .col-4{grid-column:1/-1}
+      .card{padding:14px}
+
+      .proj{grid-template-columns:1fr;gap:12px}
+      .proj h3{font-size:18px}
+
+      .list li{padding:10px}
+    }
   </style>
 </head>
 <body>
