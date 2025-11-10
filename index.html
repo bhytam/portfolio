@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Teixeira - Engenheiro de Software</title>
+    <title>João Teixeira - Engenheiro de Software | Sistemas, Apps e IA</title>
     <meta name="description" content="Engenheiro de software com 15+ anos criando sistemas, apps e automações em IA para empresas que buscam eficiência real.">
+    <meta name="keywords" content="engenheiro de software, desenvolvimento de sistemas, apps web, apps mobile, automação, IA, consultoria tecnologia">
     <meta property="og:title" content="João Teixeira - Engenheiro de Software">
     <meta property="og:description" content="Sistemas internos, apps web/mobile e consultoria em IA para empresas.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://seudominio.com/profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
             --bg: #0b0d10;
@@ -601,23 +605,23 @@
     <header>
         <div class="container">
             <nav class="nav">
-                <a href="#" class="brand">
-                    <span class="brand-dot"></span>
+                <a href="#" class="brand" aria-label="João Teixeira - Página inicial">
+                    <span class="brand-dot" aria-hidden="true"></span>
                     João Teixeira
                 </a>
-                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </button>
-                <div class="nav-links" id="navLinks">
+                <nav class="nav-links" id="navLinks" role="navigation" aria-label="Menu principal">
                     <a href="#servicos" class="nav-link" onclick="closeMenu()">Serviços</a>
                     <a href="#projetos" class="nav-link" onclick="closeMenu()">Projetos</a>
                     <a href="#diferenciais" class="nav-link" onclick="closeMenu()">Diferenciais</a>
                     <a href="#contato" class="nav-link" onclick="closeMenu()">Contato</a>
-                </div>
+                </nav>
             </nav>
         </div>
     </header>
@@ -631,7 +635,7 @@
                         Engenheiro de Software
                     </div>
                     <h1>Sistemas, Apps & IA para empresas que querem <span class="brand-text">eficiência real</span></h1>
-                    <p>Engenheiro de software especializado em criar sistemas e apps sob medida. Com 15+ anos de experiência, ajudo empresas a automatizar processos manuais, integrar plataformas e transformar dados em decisões inteligentes. Cada projeto é uma oportunidade de gerar economia real e eficiência operacional.</p>
+                    <p>Engenheiro de software especializado em criar sistemas e apps sob medida. Com 15+ anos de experiência, ajudo empresas a automatizar processos manuais, integrar plataformas e transformar dados em decisões inteligentes.</p>
                     <div class="hero-buttons">
                         <a href="https://wa.me/5585996584394?text=Olá, João! Gostaria de falar sobre um projeto." target="_blank" class="btn-primary">
                             Falar no WhatsApp
@@ -641,7 +645,7 @@
                 </div>
                 <div class="hero-card">
                     <div class="profile-section">
-                        <img src="profile.JPG" alt="João Teixeira" class="profile-image">
+                        <img src="profile.jpg" alt="João Teixeira" class="profile-image">
                         <h3>João Teixeira</h3>
                         <p>Engenheiro de Software</p>
                     </div>
@@ -791,7 +795,7 @@
 
     <footer>
         <div class="container">
-            © <span id="year"></span> João Teixeira. | Todos os direitos reservados
+            © <span id="year"></span> João Teixeira | Todos os direitos reservados
         </div>
     </footer>
 
@@ -800,12 +804,16 @@
 
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isOpen);
         }
 
         function closeMenu() {
             const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
             navLinks.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
         }
 
         // Fecha o menu ao clicar fora dele
@@ -814,10 +822,23 @@
             const menuToggle = document.querySelector('.menu-toggle');
             const nav = document.querySelector('.nav');
             
-            if (!nav.contains(event.target)) {
-                navLinks.classList.remove('active');
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                closeMenu();
             }
         });
+
+        // Fecha menu ao pressionar ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        // Lazy loading para imagem
+        if ('loading' in HTMLImageElement.prototype) {
+            const img = document.querySelector('.profile-image');
+            if (img) img.loading = 'lazy';
+        }
     </script>
 </body>
 </html>
