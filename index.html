@@ -451,6 +451,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
             .menu-toggle {
                 display: block;
             }
@@ -469,6 +473,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.3s ease;
+                box-shadow: var(--shadow);
             }
 
             .nav-links.active {
@@ -484,23 +489,110 @@
             }
 
             .hero {
-                grid-template-columns: 1fr;
+                padding: 40px 0 40px;
+                display: block;
+            }
+
+            .hero > .container {
+                display: block !important;
+                grid-template-columns: 1fr !important;
+            }
+
+            .hero-content {
+                margin-bottom: 30px;
             }
 
             .hero-content h1 {
-                font-size: 32px;
+                font-size: 28px;
+                line-height: 1.2;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-card {
+                padding: 20px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-section h3 {
+                font-size: 18px;
             }
 
             .stats-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .stat-item {
+                padding: 12px;
+            }
+
+            .stat-item strong {
+                font-size: 18px;
+            }
+
+            .stat-item span {
+                font-size: 12px;
             }
 
             section {
-                padding: 60px 0;
+                padding: 50px 0;
+            }
+
+            .section-header {
+                margin-bottom: 30px;
+            }
+
+            .section-header h2 {
+                font-size: 26px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .project {
+                padding: 24px;
+            }
+
+            .project h3 {
+                font-size: 20px;
+            }
+
+            .project p {
+                font-size: 15px;
+            }
+
+            .differential-item {
+                padding: 16px 18px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
             }
         }
     </style>
@@ -539,7 +631,7 @@
                         Engenheiro de Software
                     </div>
                     <h1>Sistemas, Apps & IA para empresas que querem <span class="brand-text">eficiência real</span></h1>
-                    <p>Engenheiro de software especializado em criar sistemas e apps sob medida. Com 15+ anos de experiência, ajudo empresas a automatizar processos manuais, integrar plataformas e transformar dados em decisões inteligentes.</p>
+                    <p>Engenheiro de software especializado em criar sistemas e apps sob medida. Com 15+ anos de experiência, ajudo empresas a automatizar processos manuais, integrar plataformas e transformar dados em decisões inteligentes. Cada projeto é uma oportunidade de gerar economia real e eficiência operacional.</p>
                     <div class="hero-buttons">
                         <a href="https://wa.me/5585996584394?text=Olá, João! Gostaria de falar sobre um projeto." target="_blank" class="btn-primary">
                             Falar no WhatsApp
@@ -682,13 +774,13 @@
                 <div class="contact-wrapper">
                     <div class="section-header">
                         <h2>Entre em contato</h2>
-                        <p>Conte rapidamente seu contexto e objetivo — eu retorno com uma proposta enxuta e prazos.</p>
+                        <p>Tem um projeto em mente? Fale comigo sobre o desafio e retorno com uma proposta objetiva e prazos realistas.</p>
                     </div>
                     <div class="contact-buttons">
                         <a href="https://wa.me/5585996584394?text=Olá, João! Quero conversar sobre um projeto." target="_blank" class="btn-primary">
                             WhatsApp
                         </a>
-                        <a href="mailto:joao.teixeira@outlook.com?subject=Projeto - Portfólio João Teixeira" class="btn-secondary">
+                        <a href="mailto:joao.teixeira@outlook.com?subject=Projeto - Solicitação de Proposta" class="btn-secondary">
                             E-mail
                         </a>
                     </div>
@@ -699,7 +791,7 @@
 
     <footer>
         <div class="container">
-            © <span id="year"></span> João Teixeira | Todos os direitos reservados
+            © <span id="year"></span> João Teixeira. | Todos os direitos reservados
         </div>
     </footer>
 
