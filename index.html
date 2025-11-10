@@ -1,303 +1,370 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>João Teixeira — Portfólio</title>
-  <meta name="description" content="Engenheiro de software com 15+ anos criando sistemas, apps e automações em IA para pequenas e médias empresas." />
-  <meta property="og:title" content="João Teixeira — Portfólio" />
-  <meta property="og:description" content="Sistemas internos, apps web/mobile e consultoria em IA para PMEs." />
-  <meta property="og:type" content="website" />
-  <style>
-    :root{
-      --bg: #0b0d10;          /* fundo escuro elegante */
-      --card: #111418;        /* cartões */
-      --muted: #7a7f87;       /* texto secundário */
-      --text: #e6e9ef;        /* texto principal */
-      --brand: #6ee7b7;       /* verde suave */
-      --brand-ink: #083d2d;   /* contraste do brand */
-      --ring: rgba(110,231,183,.35);
-      --shadow: 0 10px 25px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,13,16,.95),rgba(11,13,16,.75));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px var(--ring)}
-    .nav a.btn{padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:12px}
-    .nav a.btn:hover{border-color:rgba(255,255,255,.22)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Teixeira - Engenheiro de Software</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Hero */
-    .hero{padding:56px 0 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}
-    .hero h1{font-size:clamp(28px,4.5vw,46px);line-height:1.15;margin:6px 0 10px}
-    .kicker{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
-    .kicker .chip{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(110,231,183,.12);color:var(--brand)}
-    .hero p{color:#cfd3da;margin:0 0 20px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-primary{background:var(--brand);color:var(--brand-ink);padding:12px 16px;border-radius:14px;font-weight:700;box-shadow:var(--shadow)}
-    .btn-ghost{padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:#dbe0e7}
-    .hero-card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:14px}
-    .stat b{display:block;font-size:22px}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #e4e4e7;
+            background: #09090b;
+        }
 
-    /* Sections */
-    section{padding:44px 0;border-top:1px solid rgba(255,255,255,.06)}
-    h2{font-size:clamp(22px,3.5vw,30px);margin:0 0 18px}
-    .muted{color:var(--muted)}
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+            border-bottom: 1px solid #27272a;
+            padding: 40px 20px;
+        }
 
-    /* Services */
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .col-4{grid-column:span 4}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px;transition:transform .2s ease, border-color .2s ease}
-    .card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.16)}
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+        }
 
-    /* Projects */
-    .proj{display:grid;grid-template-columns:1fr 2fr;gap:16px}
-    .badge{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#d9dee6;padding:4px 8px;border-radius:999px;font-size:12px}
-    .proj h3{margin:6px 0 6px}
-    .proj p{margin:0 0 12px}
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    /* Differentials */
-    .list{display:grid;gap:10px}
-    .list li{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:12px}
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #a1a1aa;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
 
-    /* Contact */
-    .contact{display:flex;flex-wrap:wrap;gap:12px}
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #fff;
+            color: #09090b;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
 
-    /* Footer */
-    footer{padding:28px 0;color:var(--muted)}
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+        }
 
-    @media (max-width: 920px){
-      .hero{grid-template-columns:1fr}
-      .hero-grid{grid-template-columns:1fr 1fr}
-      .proj{grid-template-columns:1fr}
-      .col-4{grid-column:span 12}
-    }
-    /* ==== Mobile tweaks ==== */
-    @media (max-width: 480px){
-      .container{padding:16px}
-      .nav{gap:8px}
-      header .container{padding:12px 16px}
-      header .brand{font-size:16px}
-      header nav{display:flex;gap:8px;overflow:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:6px}
-      header nav a.btn{padding:8px 10px;border-radius:10px;font-size:14px;white-space:nowrap;scroll-snap-align:start}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
 
-      .hero{padding:28px 0 8px;gap:16px}
-      .hero h1{font-size:clamp(22px,8vw,30px)}
-      .kicker{font-size:12px}
-      .hero p{font-size:15px}
-      .cta{flex-direction:column}
-      .btn-primary,.btn-ghost{width:100%;text-align:center;padding:12px;border-radius:12px}
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+            color: #fff;
+        }
 
-      .hero-grid{grid-template-columns:1fr;gap:10px}
-      .stat b{font-size:18px}
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-      section{padding:28px 0}
-      .grid{grid-template-columns:1fr}
-      .col-4{grid-column:1/-1}
-      .card{padding:14px}
+        .service-card {
+            padding: 40px;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
 
-      .proj{grid-template-columns:1fr;gap:12px}
-      .proj h3{font-size:18px}
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
 
-      .list li{padding:10px}
-    }
-    /* ==== Theming (light/dark) ==== */
-    [data-theme="light"]{
-      --bg:#f9fafb; --card:#ffffff; --muted:#5b6472; --text:#0d1117; --brand:#0ea5e9; --brand-ink:#05243a; --ring:rgba(14,165,233,.25);
-    }
+        .service-card:hover::before {
+            transform: translateX(100%);
+        }
 
-    /* Header controls */
-    .right-actions{display:flex;align-items:center;gap:10px}
-    .menu-toggle,.theme-toggle{display:none;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text);cursor:pointer}
-    [data-theme="light"] .menu-toggle,[data-theme="light"] .theme-toggle{border-color:rgba(0,0,0,.08)}
+        .service-card:hover {
+            border-color: #52525b;
+            transform: translateY(-5px);
+        }
 
-    .topnav{display:flex;gap:12px}
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+        }
 
-    /* Mobile: collapsed nav */
-    @media (max-width: 768px){
-      .menu-toggle{display:inline-flex;margin-right:8px}
-      .theme-toggle{display:inline-flex}
-      .topnav{position:fixed;left:0;right:0;top:56px;background:linear-gradient(180deg,rgba(11,13,16,.98),rgba(11,13,16,.96));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.06);padding:10px 16px;gap:8px;transform:translateY(-120%);transition:transform .2s ease;z-index:9}
-      [data-theme="light"] .topnav{background:linear-gradient(180deg,rgba(249,250,251,.98),rgba(249,250,251,.96));border-bottom:1px solid rgba(0,0,0,.06)}
-      .topnav a.btn{display:inline-block;padding:10px 12px;border-radius:10px}
-      .topnav[data-collapsed="false"]{transform:translateY(0)}
-      header .container{padding:12px 16px}
-    }
+        .projects-section {
+            background: #18181b;
+            border-top: 1px solid #27272a;
+            border-bottom: 1px solid #27272a;
+        }
 
-    /* Extra small screens */
-    @media (max-width: 360px){
-      .hero h1{font-size:clamp(20px,7.5vw,26px)}
-      .btn-primary,.btn-ghost{padding:10px}
-      .card{padding:12px}
-    }
+        .project {
+            padding: 40px;
+            background: #09090b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
 
-  </style>
+        .project:hover {
+            border-color: #52525b;
+        }
+
+        .project h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .project p {
+            color: #a1a1aa;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .differentials-box {
+            background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid #27272a;
+            line-height: 1.9;
+            color: #d4d4d8;
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: #fff;
+            color: #09090b;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-btn.secondary {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .contact-btn.secondary:hover {
+            background: #fff;
+            color: #09090b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            color: #52525b;
+            font-size: 0.95rem;
+            border-top: 1px solid #27272a;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .contact-btn {
+                justify-content: center;
+            }
+
+            .differentials-box {
+                padding: 30px;
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: #52525b;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container nav" role="navigation" aria-label="principal">
-      <div class="brand"><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button><span class="dot" aria-hidden="true"></span> João Teixeira</div>
-      <div class="right-actions">
-        <button class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">◐</button>
-        <nav class="topnav" data-collapsed="true">
-          <a class="btn" href="#servicos">Serviços</a>
-          <a class="btn" href="#projetos">Projetos</a>
-          <a class="btn" href="#diferenciais">Diferenciais</a>
-          <a class="btn" href="#contato">Contato</a>
-        </nav>
-      </div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>João Teixeira</h1>
+            <p class="subtitle">Engenheiro de software com mais de 15 anos de experiência em criação de sistemas e apps sob medida para empresas que querem reduzir custos e ganhar eficiência.</p>
+            <a href="#contato" class="cta-button">Vamos conversar</a>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
     </div>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <div class="kicker">
-          <span class="chip">15+ anos</span>
-          Engenheiro de Software
-        </div>
-        <h1> Sistemas, Apps & IA <br> para PMEs que querem <span style="color:var(--brand)">eficiência real</span>.</h1>
-        <p>Sou engenheiro de software com mais de 15 anos de experiência criando sistemas e apps sob medida para empresas que querem reduzir custos e ganhar eficiência.</p>
-        <div class="cta">
-          <a class="btn-primary" href="https://wa.me/5585996584394?text=Olá%2C%20João!%20Gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar no WhatsApp</a>
-          <a class="btn-ghost" href="#projetos">Ver projetos</a>
-        </div>
-      </div>
-      <aside class="hero-card">
-        <div class="hero-grid">
-          <div class="stat"><b>+30%</b><span class="muted">ganho de eficiência (cases)</span></div>
-          <div class="stat"><b>End-to-end</b><span class="muted">da ideia ao deploy</span></div>
-          <div class="stat"><b>Apps Web/Mobile</b><span class="muted">experiências rápidas</span></div>
-          <div class="stat"><b>IA & Automação</b><span class="muted">n8n, chatbots, integrações</span></div>
-        </div>
-      </aside>
-    </section>
-
-    <section id="servicos">
-      <h2>Serviços</h2>
-      <p class="muted">Soluções sob medida para pequenas e médias empresas.</p>
-      <div class="grid">
-        <div class="col-4"><div class="card"><h3>Sistemas internos</h3><p>CRMs, gestão, fluxo operacional e relatórios. Processos claros e auditáveis.</p></div></div>
-        <div class="col-4"><div class="card"><h3>Apps web & mobile</h3><p>Aplicativos rápidos, responsivos e seguros, focados em usabilidade e resultado.</p></div></div>
-        <div class="col-4"><div class="card"><h3>Consultoria em IA</h3><p>Automação de tarefas, chatbots, classificação de dados e copilotos para equipes.</p></div></div>
-        <div class="col-4"><div class="card"><h3>Integrações</h3><p>Conecte ERP, WhatsApp, gateways de pagamento, bancos de dados e APIs.</p></div></div>
-        <div class="col-4"><div class="card"><h3>Dashboards</h3><p>Análises em tempo real, indicadores e insights para decisões melhores.</p></div></div>
-      </div>
-    </section>
-
-    <section id="projetos">
-      <h2>Projetos selecionados</h2>
-      <div class="proj card">
-        <div>
-          <span class="badge">App Mobile</span>
-          <h3>Agenda Cultural Bissau</h3>
-        </div>
-        <div>
-          <p>Aplicativo que centraliza as edições da revista Agenda Cultural Bissau e um guia de eventos da cidade de Bissau, permitindo que moradores e visitantes descubram o que está acontecendo.</p>
-          <ul class="muted">
-            <li>Catálogo de edições e busca</li>
-            <li>Agenda de eventos com filtros</li>
-            <li>Arquitetura preparada para crescimento</li>
-          </ul>
-        </div>
-      </div>
-
-      <br>
-      <div class="proj card">
-        <div>
-          <span class="badge">Produto / Marketplace</span>
-          <h3>Meu Envelope</h3>
-        </div>
-        <div>
-          <p>App que permite a lojas de card game oferecerem o serviço de recebimento e entrega de cartas trocadas, criando uma nova fonte de receita e fortalecendo a comunidade.</p>
-          <ul class="muted">
-            <li>Cadastro e verificação de lojas parceiras</li>
-            <li>Fluxo de drop-off / pick-up para jogadores</li>
-            <li>Notificações e relatórios operacionais</li>
-          </ul>
-        </div>
-      </div>
-
-      <br>
-      <div class="proj card">
-        <div>
-          <span class="badge">Automação & IA</span>
-          <h3>Briê Semijoias — automação de processos</h3>
-        </div>
-        <div>
-          <p>Automatização de notificações para revendedores e rotinas internas, reduzindo o trabalho manual e acelerando respostas.</p>
-          <ul class="muted">
-            <li>Economia de <b>+30% do tempo da equipe</b></li>
-            <li>Notificações inteligentes em múltiplos canais</li>
-            <li>Integrações com sistemas existentes</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="diferenciais">
-      <h2>Diferenciais</h2>
-      <ul class="list">
-        <li><b>Foco em eficiência:</b> cada entrega mira reduzir custos, horas e retrabalho, com metas claras e métricas acompanháveis.</li>
-        <li><b>End‑to‑end de verdade:</b> da descoberta do problema ao deploy e monitoramento. Você fala com quem decide e executa.</li>
-        <li><b>IA pragmática:</b> automações com n8n, chatbots e copilotos que funcionam no dia a dia — sem hype, com ROI.</li>
-        <li><b>Integração sem fricção:</b> conecto seu ERP, CRM, WhatsApp, gateways e bancos de dados para o fluxo “uma vez só”.</li>
-        <li><b>Experiência de 15+ anos:</b> bases sólidas em engenharia, segurança e performance; soluções que escalam.</li>
-        <li><b>Comunicação clara:</b> linguagem acessível para empreendedores, cronograma simples e checkpoints objetivos.</li>
-      </ul>
-    </section>
-
-    <section id="contato">
-      <h2>Entre em contato</h2>
-      <p class="muted">Conte rapidamente seu contexto e objetivo — eu retorno com uma proposta enxuta e prazos.</p>
-      <div class="contact">
-        <a class="btn-primary" href="https://wa.me/5585996584394?text=Olá%2C%20João!%20Quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn-ghost" href="mailto:joao.teixeira@outlook.com?subject=Projeto%20-%20Portfólio%20João%20Teixeira">E‑mail</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
     <div class="container">
-      © <span id="year"></span> João Teixeira.
+        <h2 class="section-title">Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Criação de sistemas internos</h3>
+            </div>
+            <div class="service-card">
+                <h3>Criação de apps web e mobile</h3>
+            </div>
+            <div class="service-card">
+                <h3>Consultoria em IA e automações</h3>
+            </div>
+            <div class="service-card">
+                <h3>Integrações entre plataformas</h3>
+            </div>
+            <div class="service-card">
+                <h3>Dashboards e relatórios inteligentes</h3>
+            </div>
+        </div>
     </div>
-  </footer>
 
-  <script>
-    // Ano do rodapé
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <div class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            
+            <div class="project">
+                <h3>Agenda Cultural Bissau</h3>
+                <p>App móvel que permite que as pessoas tenham acesso às edições já lançadas da revista Agenda Cultural Bissau e possam saber quais eventos irão ocorrer na cidade de Bissau.</p>
+            </div>
 
-    // ----- Tema (light/dark) -----
-    const savedTheme = localStorage.getItem('theme');
-    if(savedTheme){ document.documentElement.setAttribute('data-theme', savedTheme); }
-    const themeBtn = document.querySelector('.theme-toggle');
-    themeBtn?.addEventListener('click', ()=>{
-      const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      if(current === 'light') document.documentElement.setAttribute('data-theme','light');
-      else document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', current === 'light' ? 'light' : 'dark');
-    });
+            <div class="project">
+                <h3>Meu Envelope</h3>
+                <p>App móvel que permite que qualquer loja de card game registrada possa oferecer o serviço de receber e entregar cartas trocadas por jogadores, gerando assim uma nova fonte de receita.</p>
+            </div>
 
-    // ----- Menu mobile (hambúrguer) -----
-    const menuBtn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.topnav');
-    menuBtn?.addEventListener('click', ()=>{
-      const isCollapsed = nav.getAttribute('data-collapsed') === 'true';
-      nav.setAttribute('data-collapsed', String(!isCollapsed));
-      menuBtn.setAttribute('aria-expanded', String(isCollapsed));
-    });
-    // Fecha menu ao clicar em link
-    nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
-      if(window.matchMedia('(max-width: 768px)').matches){
-        nav.setAttribute('data-collapsed','true');
-        menuBtn.setAttribute('aria-expanded','false');
-      }
-    }));
-  </script>
+            <div class="project">
+                <h3>Automação Briê Semijoias</h3>
+                <p>Automatização de processos internos, economizando mais de 30% do tempo da equipe que era gasto com notificações para os revendedores.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Diferenciais</h2>
+        <div class="differentials-box">
+            <p>Com mais de 15 anos de experiência, não entrego apenas código — entrego soluções que funcionam de verdade. Cada projeto é pensado para resolver problemas reais do seu negócio, com foco em resultados práticos: economia de tempo, redução de custos e aumento de eficiência.</p>
+            <br>
+            <p>Trabalho de forma direta e transparente, transformando ideias em sistemas funcionais que se integram perfeitamente à realidade da sua empresa. Da consultoria à entrega, você conta com um parceiro comprometido em fazer sua operação funcionar melhor.</p>
+        </div>
+    </div>
+
+    <div class="container contact-section" id="contato">
+        <h2 class="section-title">Contato</h2>
+        <div class="contact-buttons">
+            <a href="https://wa.me/5585996584394" class="contact-btn" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp
+            </a>
+            <a href="mailto:joao.teixeira@outlook.com" class="contact-btn secondary">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                E-mail
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 João Teixeira - Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>
