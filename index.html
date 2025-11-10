@@ -33,6 +33,22 @@
             text-align: center;
         }
 
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            border: 4px solid #27272a;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.2);
+        }
+
         .hero h1 {
             font-size: 4rem;
             font-weight: 700;
@@ -226,6 +242,11 @@
                 font-size: 1.1rem;
             }
 
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
@@ -282,8 +303,9 @@
 <body>
     <div class="hero">
         <div class="hero-content">
+            <img src="profile.jpg" alt="João Teixeira" class="profile-image">
             <h1>João Teixeira</h1>
-            <p class="subtitle">Engenheiro de software com mais de 15 anos de experiência em criação de sistemas e apps sob medida para empresas que querem reduzir custos e ganhar eficiência.</p>
+            <p class="subtitle">Engenheiro de software especializado em criar sistemas e apps sob medida. Com 15+ anos de experiência, ajudo empresas a automatizar processos manuais, integrar plataformas e transformar dados em decisões inteligentes. Cada projeto é uma oportunidade de gerar economia real e eficiência operacional.</p>
             <a href="#contato" class="cta-button">Vamos conversar</a>
         </div>
         <div class="scroll-indicator">
