@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>João Teixeira — Portfólio</title>
+  <meta name="description" content="Engenheiro de software com 15+ anos criando sistemas, apps e automações em IA para pequenas e médias empresas." />
+  <meta property="og:title" content="João Teixeira — Portfólio" />
+  <meta property="og:description" content="Sistemas internos, apps web/mobile e consultoria em IA para PMEs." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg: #0b0d10;          /* fundo escuro elegante */
+      --card: #111418;        /* cartões */
+      --muted: #7a7f87;       /* texto secundário */
+      --text: #e6e9ef;        /* texto principal */
+      --brand: #6ee7b7;       /* verde suave */
+      --brand-ink: #083d2d;   /* contraste do brand */
+      --ring: rgba(110,231,183,.35);
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,13,16,.95),rgba(11,13,16,.75));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px var(--ring)}
+    .nav a.btn{padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:12px}
+    .nav a.btn:hover{border-color:rgba(255,255,255,.22)}
+
+    /* Hero */
+    .hero{padding:56px 0 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(28px,4.5vw,46px);line-height:1.15;margin:6px 0 10px}
+    .kicker{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+    .kicker .chip{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(110,231,183,.12);color:var(--brand)}
+    .hero p{color:#cfd3da;margin:0 0 20px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{background:var(--brand);color:var(--brand-ink);padding:12px 16px;border-radius:14px;font-weight:700;box-shadow:var(--shadow)}
+    .btn-ghost{padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.12);color:#dbe0e7}
+    .hero-card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:14px}
+    .stat b{display:block;font-size:22px}
+
+    /* Sections */
+    section{padding:44px 0;border-top:1px solid rgba(255,255,255,.06)}
+    h2{font-size:clamp(22px,3.5vw,30px);margin:0 0 18px}
+    .muted{color:var(--muted)}
+
+    /* Services */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .col-4{grid-column:span 4}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px;transition:transform .2s ease, border-color .2s ease}
+    .card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.16)}
+
+    /* Projects */
+    .proj{display:grid;grid-template-columns:1fr 2fr;gap:16px}
+    .badge{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#d9dee6;padding:4px 8px;border-radius:999px;font-size:12px}
+    .proj h3{margin:6px 0 6px}
+    .proj p{margin:0 0 12px}
+
+    /* Differentials */
+    .list{display:grid;gap:10px}
+    .list li{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:12px}
+
+    /* Contact */
+    .contact{display:flex;flex-wrap:wrap;gap:12px}
+
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted)}
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .hero-grid{grid-template-columns:1fr 1fr}
+      .proj{grid-template-columns:1fr}
+      .col-4{grid-column:span 12}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> João Teixeira</div>
+      <nav>
+        <a class="btn" href="#servicos">Serviços</a>
+        <a class="btn" href="#projetos">Projetos</a>
+        <a class="btn" href="#diferenciais">Diferenciais</a>
+        <a class="btn" href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="kicker">
+          <span class="chip">15+ anos</span>
+          Engenheiro de Software
+        </div>
+        <h1> Sistemas, Apps & IA <br> para PMEs que querem <span style="color:var(--brand)">eficiência real</span>.</h1>
+        <p>Sou engenheiro de software com mais de 15 anos de experiência criando sistemas e apps sob medida para empresas que querem reduzir custos e ganhar eficiência.</p>
+        <div class="cta">
+          <a class="btn-primary" href="https://wa.me/5585996584394?text=Olá%2C%20João!%20Gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a class="btn-ghost" href="#projetos">Ver projetos</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-grid">
+          <div class="stat"><b>+30%</b><span class="muted">ganho de eficiência (cases)</span></div>
+          <div class="stat"><b>End-to-end</b><span class="muted">da ideia ao deploy</span></div>
+          <div class="stat"><b>Apps Web/Mobile</b><span class="muted">experiências rápidas</span></div>
+          <div class="stat"><b>IA & Automação</b><span class="muted">n8n, chatbots, integrações</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <p class="muted">Soluções sob medida para pequenas e médias empresas.</p>
+      <div class="grid">
+        <div class="col-4"><div class="card"><h3>Sistemas internos</h3><p>CRMs, gestão, fluxo operacional e relatórios. Processos claros e auditáveis.</p></div></div>
+        <div class="col-4"><div class="card"><h3>Apps web & mobile</h3><p>Aplicativos rápidos, responsivos e seguros, focados em usabilidade e resultado.</p></div></div>
+        <div class="col-4"><div class="card"><h3>Consultoria em IA</h3><p>Automação de tarefas, chatbots, classificação de dados e copilotos para equipes.</p></div></div>
+        <div class="col-4"><div class="card"><h3>Integrações</h3><p>Conecte ERP, WhatsApp, gateways de pagamento, bancos de dados e APIs.</p></div></div>
+        <div class="col-4"><div class="card"><h3>Dashboards</h3><p>Análises em tempo real, indicadores e insights para decisões melhores.</p></div></div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos selecionados</h2>
+      <div class="proj card">
+        <div>
+          <span class="badge">App Mobile</span>
+          <h3>Agenda Cultural Bissau</h3>
+        </div>
+        <div>
+          <p>Aplicativo que centraliza as edições da revista Agenda Cultural Bissau e um guia de eventos da cidade de Bissau, permitindo que moradores e visitantes descubram o que está acontecendo.</p>
+          <ul class="muted">
+            <li>Catálogo de edições e busca</li>
+            <li>Agenda de eventos com filtros</li>
+            <li>Arquitetura preparada para crescimento</li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+      <div class="proj card">
+        <div>
+          <span class="badge">Produto / Marketplace</span>
+          <h3>Meu Envelope</h3>
+        </div>
+        <div>
+          <p>App que permite a lojas de card game oferecerem o serviço de recebimento e entrega de cartas trocadas, criando uma nova fonte de receita e fortalecendo a comunidade.</p>
+          <ul class="muted">
+            <li>Cadastro e verificação de lojas parceiras</li>
+            <li>Fluxo de drop-off / pick-up para jogadores</li>
+            <li>Notificações e relatórios operacionais</li>
+          </ul>
+        </div>
+      </div>
+
+      <br>
+      <div class="proj card">
+        <div>
+          <span class="badge">Automação & IA</span>
+          <h3>Briê Semijoias — automação de processos</h3>
+        </div>
+        <div>
+          <p>Automatização de notificações para revendedores e rotinas internas, reduzindo o trabalho manual e acelerando respostas.</p>
+          <ul class="muted">
+            <li>Economia de <b>+30% do tempo da equipe</b></li>
+            <li>Notificações inteligentes em múltiplos canais</li>
+            <li>Integrações com sistemas existentes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <h2>Diferenciais</h2>
+      <ul class="list">
+        <li><b>Foco em eficiência:</b> cada entrega mira reduzir custos, horas e retrabalho, com metas claras e métricas acompanháveis.</li>
+        <li><b>End‑to‑end de verdade:</b> da descoberta do problema ao deploy e monitoramento. Você fala com quem decide e executa.</li>
+        <li><b>IA pragmática:</b> automações com n8n, chatbots e copilotos que funcionam no dia a dia — sem hype, com ROI.</li>
+        <li><b>Integração sem fricção:</b> conecto seu ERP, CRM, WhatsApp, gateways e bancos de dados para o fluxo “uma vez só”.</li>
+        <li><b>Experiência de 15+ anos:</b> bases sólidas em engenharia, segurança e performance; soluções que escalam.</li>
+        <li><b>Comunicação clara:</b> linguagem acessível para empreendedores, cronograma simples e checkpoints objetivos.</li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Entre em contato</h2>
+      <p class="muted">Conte rapidamente seu contexto e objetivo — eu retorno com uma proposta enxuta e prazos.</p>
+      <div class="contact">
+        <a class="btn-primary" href="https://wa.me/5585996584394?text=Olá%2C%20João!%20Quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn-ghost" href="mailto:joao.teixeira@outlook.com?subject=Projeto%20-%20Portfólio%20João%20Teixeira">E‑mail</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> João Teixeira. Feito com foco em eficiência.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
